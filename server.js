@@ -1,22 +1,38 @@
-const express = require('express');
-const bodyprser = require('body-parser');
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.json())
 
-//dtabase connaction
 const db = require('./config/database');
-//testDB
-db.authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
-const app = express();
 
-app.get('/',(req,res)=>res.send('index'));
-const PORT = process.env.PORT || 5000;
-//customer routes
-app.use('/customers', require('./routes/customers'));
-app.use('/products', require('./routes/products'));
+//cors
+const enableCrossDomain = function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', '*');
+  res.header('Access-Control-Allow-Headers', '*');
 
-app.listen(PORT, console.log(`server start on port ${PORT}`));
+  next();
+}
+
+//jwt Role
+const Role = db.role;
+// force: true will drop the table if it already exists
+db.sequelize.sync({force: false}).then(() => {
+  console.log(`Drop and Resync with { force: true }`);
+});
+
+require('./routes/customers.route')(app);
+require('./routes/products.route')(app);
+
+//jwt
+require('./routes/jwt.routes')(app);
+
+ 
+// Create a Server
+var server = app.listen(8081, function () {
+ 
+  var host = server.address().address
+  var port = server.address().port
+ 
+  console.log("App listening at http://localhost", host, port)
+})

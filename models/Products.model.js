@@ -1,6 +1,5 @@
-const Sequelize = require('sequelize');
-const db = require('../config/database');
-const Products = db.define('products',{
+module.exports = (sequelize,Sequelize)=>{
+    const Product = sequelize.define('product',{
     item_code:{
         type:Sequelize.STRING
     },
@@ -32,5 +31,5 @@ const Products = db.define('products',{
         type:Sequelize.STRING
     },
 })
-
-module.exports = Products;
+return Product;
+}

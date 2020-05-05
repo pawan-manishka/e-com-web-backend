@@ -1,6 +1,5 @@
-const Sequelize = require('sequelize');
-const db = require('../config/database');
-const Customer = db.define('customer',{
+module.exports = (sequelize,Sequelize)=>{
+const Customer = sequelize.define('customer',{
     id:{
         type: Sequelize.INTEGER(11),
         allowNull:false,
@@ -20,5 +19,5 @@ const Customer = db.define('customer',{
         type:Sequelize.STRING
     },
 })
-
-module.exports = Customer;
+return Customer;
+}
