@@ -20,6 +20,7 @@ db.sequelize = sequelize;
 //Models/tables
 db.customers = require('../models/Customers.model')(sequelize, Sequelize);
 db.products = require('../models/Products.model')(sequelize, Sequelize);
+db.Order = require('../models/Order.model')(sequelize, Sequelize);
 
 //jwt
 db.user = require('../models/user.model')(sequelize, Sequelize);

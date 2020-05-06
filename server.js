@@ -5,14 +5,6 @@ app.use(bodyParser.json())
 
 const db = require('./config/database');
 
-//cors
-const enableCrossDomain = function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', '*');
-  res.header('Access-Control-Allow-Headers', '*');
-
-  next();
-}
 
 //jwt Role
 const Role = db.role;
@@ -23,6 +15,8 @@ db.sequelize.sync({force: false}).then(() => {
 
 require('./routes/customers.route')(app);
 require('./routes/products.route')(app);
+require('./routes/Order.route')(app);
+
 
 //jwt
 require('./routes/jwt.routes')(app);
