@@ -30,6 +30,9 @@ module.exports = (sequelize,Sequelize)=>{
     image:{
         type:Sequelize.STRING
     },
+    category:{
+        type:Sequelize.STRING
+    },
 })
 return Product;
 }

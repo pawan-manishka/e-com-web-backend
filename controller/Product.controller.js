@@ -31,8 +31,8 @@ exports.findAll = (req, res) => {
 };
 
 // Find a Product by Id
-exports.findById = (req, res) => {
-	Product.findById(req.params.Product).then(Product => {
+exports.findByPk = (req, res) => {
+	Product.findByPk(req.params.productId).then(Product => {
 		res.send(Product);
 	})
 };
@@ -66,4 +66,4 @@ exports.delete = (req, res) => {
 	}).then(() => {
 		res.status(200).send('deleted successfully a Product with id = ' + id);
 	});
-};
+};	

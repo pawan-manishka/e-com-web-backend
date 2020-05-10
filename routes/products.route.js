@@ -11,7 +11,7 @@ module.exports = function(app) {
     app.get('/api/products', products.findAll);
  
     // Retrieve a single product by Id
-    app.get('/api/products/:productId', products.findById);
+    app.get('/api/products/:productId', products.findByPk);
  
     // Update a product with Id
     app.put('/api/products/:productId', products.update);

@@ -1,7 +1,8 @@
 module.exports = (sequelize, Sequelize) => {
     const Order = sequelize.define('order', {
         Order_no: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
+            allowNull:false,
         },
         cutomer_id: {
             type: Sequelize.STRING

@@ -5,10 +5,9 @@ const Customer = db.customers;
 exports.create = (req, res) => {
 	// Save to MySQL database
 	Customer.create({
-		firstName: req.body.firstname,
-		lastName: req.body.lastName,
-		email: req.body.email,
-		password: req.body.password,
+		productName: req.body.productName,
+		productQTY: req.body.productQTY,
+		totalPrice: req.body.totalPrice,
 	}).then(customer => {
 		// Send created customer to client
 		res.send(customer);

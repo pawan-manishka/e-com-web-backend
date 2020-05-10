@@ -6,16 +6,13 @@ const Customer = sequelize.define('customer',{
         autoIncrement:true,
         primaryKey:true
     },
-    firstName:{
+    productName:{
         type:Sequelize.STRING
     },
-    lastName:{
+    productQTY:{
         type:Sequelize.STRING
     },
-    email:{
-        type:Sequelize.STRING
-    },
-    password:{
+    totalPrice:{
         type:Sequelize.STRING
     },
 })

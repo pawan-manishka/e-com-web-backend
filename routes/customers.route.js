@@ -1,5 +1,6 @@
 module.exports = function(app) {
- 
+    var cors = require('cors')
+    app.use(cors())
     const customers = require('../controller/Customer.controller');
  
     // Create a new Customer
