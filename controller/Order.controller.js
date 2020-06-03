@@ -58,4 +58,4 @@ exports.delete = (req, res) => {
 	}).then(() => {
 		res.status(200).send('deleted successfully a Order with id = ' + id);
 	});
-};
+};	
