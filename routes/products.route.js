@@ -2,11 +2,11 @@ module.exports = function (app) {
   var cors = require("cors");
   app.use(cors());
 
-  const products = require("../controller/product.controller");
+  const products = require("../controller/Product.controller");
 
   // Create a new product
   app.post("/api/products", products.create);
-
+  
   // Retrieve all product
   app.get("/api/products", products.findAll);
 
