@@ -7,7 +7,7 @@ exports.create = (req, res) => {
 	Order.create({
 		Order_no: req.body.Order_no,
 		cutomer_id: req.body.cutomer_id,
-		order_list: req.body.order_list,
+		order_list: req.body.order_list.replace(/"([^"]+)":/g, '$1:'),
 		order_deliverytype: req.body.order_deliverytype,
 		order_delivery_address: req.body.order_delivery_address,
 		Payment_Status: req.body.Payment_Status,
@@ -58,4 +58,4 @@ exports.delete = (req, res) => {
 	}).then(() => {
 		res.status(200).send('deleted successfully a Order with id = ' + id);
 	});
-};	
+};
