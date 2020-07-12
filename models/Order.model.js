@@ -8,7 +8,13 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING
         },
         order_list: {
-            type: Sequelize.STRING
+            type: Sequelize.TEXT,
+            get: function() {
+                return JSON.parse(this.getDataValue("order_list"));
+            },
+            set: function(value) {
+                return this.setDataValue("order_list", JSON.stringify(value));
+            }
         },
         order_deliverytype: {
             type: Sequelize.STRING
