@@ -2,7 +2,7 @@ module.exports = function(app) {
     var cors = require('cors')
     app.use(cors())
 
-    const Order = require('../controller/Order.controller');
+    const Order = require('../controller/Category.controller');
  
     // Create a new product
     app.post('/api/addOrder', Order.create);

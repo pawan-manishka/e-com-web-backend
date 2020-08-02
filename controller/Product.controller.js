@@ -22,25 +22,11 @@ exports.create = (req, res) => {
   });
 };
 
-// FETCH all Product
-// exports.findAll = (req, res) => {
-//   Product.findAll().then((Product) => {
-//     // Send all Product to Client
-//     res.send(Product);
-//   });
-// };
-
-// Find a Product by Id
 exports.findByPk = (req, res) => {
   Product.findByPk(req.params.productId).then((Product) => {
     res.send(Product);
   });
 };
-// exports.findOne = (req, res) => {
-//   where: {
-//     category: "helthCare";
-//   }
-// };
 
 exports.findAll = (req, res) => {
   const category = req.query.category;

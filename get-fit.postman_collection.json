@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "92d6b6dd-7cc8-4dc8-9d18-2179a2edcbee",
+		"name": "get-fit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "user register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"test\",\n      \"email\":\"email\",\n      \"mobile\":\"1231\",\n      \"password\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"test\",\n    \"password\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add workout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"asdasdasdaa32\",\n    \"day\": \"aasasdada\",\n    \"time\": \"adasdadsa\",\n    \"type\": \"asasddaa\",\n    \"exercise\": \"[{title:\"asda\", data:\"daya1\",data2:\"asdaasdwda\"}]\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/workout/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"workout",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find by id workout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"WorkOutID\":\"5f1897934eec7c3f30905d01\",\n        \"name\": \"up\",\n        \"day\": \"up\",\n        \"time\": \"up\",\n        \"type\": \"up\",\n        \"exercise\": \"up\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/workout/show",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"workout",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update workout by id ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"WorkOutID\":\"5f1932a21f538110e4f7bd33\",\n            \"name\": \"tst\",\n            \"day\": \"asdadasdasdasd\",\n            \"time\": \"asdasdads\",\n            \"type\": \"dadadadad\",\n            \"exercise\": \"aadadasdasdad\"}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/workout/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"workout",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete workout by id  ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"WorkOutID\":\"5f1932a21f538110e4f7bd33\",\n            \"name\": \"tst\",\n            \"day\": \"asdadasdasdasd\",\n            \"time\": \"asdasdads\",\n            \"type\": \"dadadadad\",\n            \"exercise\": \"aadadasdasdad\"}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/workout/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"workout",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "get all workout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"a\",\n    \"day\": \"a\",\n    \"time\": \"a\",\n    \"type\": \"a\",\n    \"exercise\": \"a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/workout/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"workout",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

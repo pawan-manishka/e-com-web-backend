@@ -15,6 +15,7 @@ const Customer = sequelize.define('customer',{
     totalPrice:{
         type:Sequelize.STRING
     },
+    
 })
 return Customer;
 }

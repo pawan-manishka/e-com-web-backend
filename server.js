@@ -1,8 +1,18 @@
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
-app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    limit: "50mb",
+    extended: false,
+  })
+);
+app.use(bodyParser.json({ limit: "50mb" }));
 
+bodyParser = {
+  json: { limit: "50mb", extended: true },
+  urlencoded: { limit: "50mb", extended: true },
+};
 const db = require("./config/database");
 
 //jwt Role
