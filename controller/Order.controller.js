@@ -7,7 +7,7 @@ exports.create = (req, res) => {
   Order.create({
     Order_no: req.body.Order_no,
     cutomer_id: req.body.cutomer_id,
-    order_list: req.body.order_list.replace(/"([^"]+)":/g, '$1:'),
+    order_list: req.body.order_list,
     order_deliverytype: req.body.order_deliverytype,
     order_delivery_address: req.body.order_delivery_address,
     Payment_Status: req.body.Payment_Status,
@@ -20,8 +20,16 @@ exports.create = (req, res) => {
 // FETCH all Order
 exports.findAll = (req, res) => {
   Order.findAll().then((Order) => {
+    const test = Order.filter((order) =>  {
+      const { order_list } = order
+      console.log("teeeeeeeeeee")
+      console.log(order_list)
+     order.order_list = JSON.parse(order_list)
+     return order
+     })
+    // console.log(Order)
     // Send all Order to Client
-    res.send(Order);
+    res.send(test);
   });
 };
 

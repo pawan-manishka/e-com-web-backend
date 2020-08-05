@@ -8,7 +8,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING
         },
         order_list: {
-            type: Sequelize.STRING
+            type: Sequelize.TEXT
         },
         order_deliverytype: {
             type: Sequelize.STRING
