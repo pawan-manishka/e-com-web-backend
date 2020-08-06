@@ -11,7 +11,7 @@ var bcrypt = require("bcryptjs");
 exports.signup = (req, res) => {
   // Save User to Database
   console.log("Processing func -> SignUp");
-
+//ise
   User.create({
     fullName: req.body.fullName,
     username: req.body.username,
@@ -171,7 +171,7 @@ exports.managementBoard = (req, res) => {
     })
     .catch((err) => {
       res.status(500).json({
-        description: "Can not access Management ",
+        description: "Can not access Management Board ",
         error: err,
       });
     });
