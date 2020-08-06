@@ -20,8 +20,16 @@ exports.create = (req, res) => {
 // FETCH all Order
 exports.findAll = (req, res) => {
   Order.findAll().then((Order) => {
+    const test = Order.filter((order) =>  {
+      const { order_list } = order
+      console.log("teeeeeeeeeee")
+      console.log(order_list)
+     order.order_list = JSON.parse(order_list)
+     return order
+     })
+    // console.log(Order)
     // Send all Order to Client
-    res.send(Order);
+    res.send(test);
   });
 };
 
