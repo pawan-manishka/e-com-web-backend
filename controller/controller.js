@@ -143,7 +143,7 @@ exports.adminBoard = (req, res) => {
     })
     .catch((err) => {
       res.status(500).json({
-        description: "Can not access Admin Board",
+        description: "Can not access Admin ",
         error: err,
       });
     });
@@ -171,7 +171,7 @@ exports.managementBoard = (req, res) => {
     })
     .catch((err) => {
       res.status(500).json({
-        description: "Can not access Management Board",
+        description: "Can not access Management ",
         error: err,
       });
     });
