@@ -13,8 +13,7 @@ const sequelize = new Sequelize("admin_WLP", "admin_hw", "Passport@1", {
   },
 });
 
-const db = {};
-
+const db = {}; 050 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
