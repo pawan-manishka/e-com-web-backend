@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
-var multer = require('multer');
-var path = require('path');
+var multer = require("multer");
+var path = require("path");
 var bodyParser = require("body-parser");
 app.use(
   bodyParser.urlencoded({
@@ -25,7 +25,7 @@ db.sequelize.sync({ force: false }).then(() => {
 });
 
 require("./routes/customers.route")(app);
-require("./routes/products.route")(app,multer,path);
+require("./routes/products.route")(app, multer, path);
 require("./routes/Order.route")(app);
 
 //jwt
