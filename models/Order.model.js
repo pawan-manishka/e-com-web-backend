@@ -22,6 +22,16 @@ module.exports = (sequelize, Sequelize) => {
     order_delivery_address: {
       type: Sequelize.STRING,
     },
+    cityTown: {
+      type: Sequelize.STRING,
+    },
+    mobile: {
+      type: Sequelize.STRING,
+    },
+    landLine: {
+      type: Sequelize.STRING,
+    },
+
     Payment_Status: {
       type: Sequelize.STRING,
     },

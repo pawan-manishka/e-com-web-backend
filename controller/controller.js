@@ -11,14 +11,12 @@ var bcrypt = require("bcryptjs");
 exports.signup = (req, res) => {
   // Save User to Database
   console.log("Processing func -> SignUp");
-//ise
+  //ise
   User.create({
     fullName: req.body.fullName,
     username: req.body.username,
     email: req.body.email,
     mobile: req.body.mobile,
-    deliveryAddress: req.body.deliveryAddress,
-    town: req.body.town,
     landLine: req.body.landLine,
     password: bcrypt.hashSync(req.body.password, 8),
   })
@@ -81,8 +79,7 @@ exports.signin = (req, res) => {
         userId: user.id,
         fullName: user.fullName,
         email: user.email,
-        deliveryAddress: user.deliveryAddress,
-        town: user.town,
+
         landLine: user.landLine,
         landLine: user.landLine,
         mobile: user.mobile,

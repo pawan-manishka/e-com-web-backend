@@ -11,6 +11,9 @@ exports.create = (req, res) => {
     order_deliverytype: req.body.order_deliverytype,
     order_delivery_address: req.body.order_delivery_address,
     Payment_Status: req.body.Payment_Status,
+    mobile: req.body.mobile,
+    landLine: req.body.landLine,
+    cityTown: req.body.cityTown,
   }).then((Order) => {
     // Send created Order to client
     res.send(Order);

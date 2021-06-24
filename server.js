@@ -10,7 +10,7 @@ app.use(
   })
 );
 app.use(bodyParser.json({ limit: "50mb" }));
-app.use(express.static('public/uploads'));
+app.use(express.static("public/uploads"));
 
 bodyParser = {
   json: { limit: "50mb", extended: true },

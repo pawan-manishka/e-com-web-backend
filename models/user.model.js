@@ -13,12 +13,7 @@ module.exports = (sequelize, Sequelize) => {
     password: {
       type: Sequelize.STRING,
     },
-    deliveryAddress: {
-      type: Sequelize.STRING,
-    },
-    town: {
-      type: Sequelize.STRING,
-    },
+
     mobile: {
       type: Sequelize.STRING,
     },
