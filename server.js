@@ -28,6 +28,7 @@ db.sequelize.sync({ force: false }).then(() => {
 require("./routes/customers.route")(app);
 require("./routes/products.route")(app, multer, path);
 require("./routes/Order.route")(app);
+require("./routes/order.confirmation.email.route")(app);
 
 //jwt
 require("./routes/jwt.routes")(app);
