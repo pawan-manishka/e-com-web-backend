@@ -7,6 +7,9 @@ module.exports = (sequelize, Sequelize) => {
     cutomer_id: {
       type: Sequelize.STRING,
     },
+    cutomer_name: {
+      type: Sequelize.STRING,
+    },
     order_list: {
       type: Sequelize.STRING,
       // get: function () {
