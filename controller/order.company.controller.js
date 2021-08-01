@@ -31,7 +31,7 @@ exports.mail = (req, res) => {
         </head>
         <body>
       
-        <b>Your Order Has been successfully Placed - Lanka Fresh </b></br>
+        <b>Your Student Registration Is Confirmed </b></br>
        
         </body>
       </html>`,

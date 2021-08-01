@@ -5,12 +5,13 @@ const Order = db.Order;
 exports.create = (req, res) => {
   // Save to MySQL database
   Order.create({
-    Order_no: req.body.Order_no,
-    cutomer_id: req.body.cutomer_id,
+    order_no: req.body.order_no,
+    customer_id: req.body.customer_id,
+    customer_name: req.body.customer_name,
     order_list: req.body.order_list,
     order_deliverytype: req.body.order_deliverytype,
     order_delivery_address: req.body.order_delivery_address,
-    Payment_Status: req.body.Payment_Status,
+    payment_status: req.body.payment_status,
     mobile: req.body.mobile,
     landLine: req.body.landLine,
     cityTown: req.body.cityTown,
