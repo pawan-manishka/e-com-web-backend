@@ -1,23 +1,13 @@
 module.exports = (sequelize, Sequelize) => {
   const Order = sequelize.define("order", {
-    Order_no: {
-      type: Sequelize.STRING,
-      allowNull: true,
-    },
-    cutomer_id: {
+    customer_id: {
       type: Sequelize.STRING,
     },
-    cutomer_name: {
+    customer_name: {
       type: Sequelize.STRING,
     },
     order_list: {
       type: Sequelize.STRING,
-      // get: function () {
-      //   return JSON.parse(this.getDataValue("order_list"));
-      // },
-      // set: function (value) {
-      //   return this.setDataValue("order_list", JSON.stringify(value));
-      // },
     },
     order_deliverytype: {
       type: Sequelize.STRING,
@@ -34,8 +24,7 @@ module.exports = (sequelize, Sequelize) => {
     landLine: {
       type: Sequelize.STRING,
     },
-
-    Payment_Status: {
+    payment_status: {
       type: Sequelize.STRING,
     },
   });

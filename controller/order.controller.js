@@ -4,6 +4,8 @@ const Order = db.Order;
 // Post a Order
 exports.create = (req, res) => {
   // Save to MySQL database
+  console.log(req.body)
+  console.log(req.body.customer_name)
   Order.create({
     order_no: req.body.order_no,
     customer_id: req.body.customer_id,
