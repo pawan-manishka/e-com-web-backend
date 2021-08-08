@@ -21,6 +21,9 @@ module.exports = (sequelize, Sequelize) => {
     mobile: {
       type: Sequelize.STRING,
     },
+    totalPrice: {
+      type: Sequelize.STRING,
+    },
     landLine: {
       type: Sequelize.STRING,
     },

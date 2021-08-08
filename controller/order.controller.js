@@ -14,6 +14,7 @@ exports.create = (req, res) => {
     order_deliverytype: req.body.order_deliverytype,
     order_delivery_address: req.body.order_delivery_address,
     payment_status: req.body.payment_status,
+    totalPrice: req.body.OrderTotal,
     mobile: req.body.mobile,
     landLine: req.body.landLine,
     cityTown: req.body.cityTown,
