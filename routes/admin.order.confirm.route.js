@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    const mail = require("../controller/order.registration.controller");
+    const mail = require("../controller/order.company.controller");
     var router = require("express").Router();
     const cors = require("cors");
   
@@ -20,7 +20,7 @@ module.exports = (app) => {
   
     router.post("/", mail.mail);
   
-    app.use("/api/student_order_mail", router);
+    app.use("/api/admin_email", router);
     
   };
   

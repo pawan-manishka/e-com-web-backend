@@ -1,6 +1,9 @@
 var nodemailer = require("nodemailer");
 exports.mail = (req, res) => {
   const email = req.body.email;
+  const customer_name = req.body.customer_name;
+  const mobile = req.body.mobile;
+  const order_list = req.body.order_list;
   
 
   var transporter = nodemailer.createTransport({
@@ -15,7 +18,7 @@ exports.mail = (req, res) => {
 
   var mailOptions = {
     from: "ravinduperera",
-    to: email,
+    to: "ravindu1997@gmail.com",
     subject: "Hello",
     // html:
     // "<b>Client Email Template- Received this once the Booking done</b><div>The Following booking is confirmed:</div>
@@ -31,7 +34,11 @@ exports.mail = (req, res) => {
         </head>
         <body>
       
-        <b>Your Student Registration Is Confirmed </b></br>
+        <b>New Order Being Placed </b></br>
+        <b>Customer Name ${customer_name}</b></br>
+        <b>Email ${email}</b></br>
+        <b>Mobile ${mobile}</b></br>
+        <b>Order List ${order_list}</b></br>
        
         </body>
       </html>`,

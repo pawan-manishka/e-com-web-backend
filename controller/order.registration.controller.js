@@ -1,7 +1,7 @@
 var nodemailer = require("nodemailer");
 exports.mail = (req, res) => {
   const email = req.body.email;
-  const items = req.body.items;
+  const items = req.body.order_list;
   
 
   var transporter = nodemailer.createTransport({

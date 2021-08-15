@@ -29,6 +29,7 @@ require("./routes/customers.route")(app);
 require("./routes/products.route")(app, multer, path);
 require("./routes/Order.route")(app);
 require("./routes/order.confirmation.email.route")(app);
+require("./routes/admin.order.confirm.route")(app);
 
 //jwt
 require("./routes/jwt.routes")(app);
