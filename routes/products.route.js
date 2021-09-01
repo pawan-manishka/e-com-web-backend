@@ -48,7 +48,7 @@ app.post('/testUpload', upload.single('file'), function(req,res) {
   app.put("/api/products/:productId", products.update);
 
   // Get a product By Category
-  app.get("/api/products/:category", products.findByCategory);
+  app.get("/api/products/category/:category", products.findByCategory);
 
   // Delete a product with Id
   app.delete("/api/products/:productId", products.delete);
