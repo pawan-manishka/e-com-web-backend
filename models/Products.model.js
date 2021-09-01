@@ -27,6 +27,9 @@ module.exports = (sequelize, Sequelize) => {
     category: {
       type: Sequelize.STRING,
     },
+    qtyType: {
+      type: Sequelize.STRING,
+    },
     stock: {
       type: Sequelize.STRING,
     },

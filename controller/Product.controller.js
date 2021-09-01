@@ -12,6 +12,7 @@ exports.create = (req, res) => {
     rating: req.body.rating,
     rating_count: req.body.rating_count,
     price: req.body.price,
+    qtyType: req.body.qtyType,
     discount: req.body.discount,
     image: req.body.image,
     category: req.body.category,
@@ -28,8 +29,26 @@ exports.findByPk = (req, res) => {
   });
 };
 
+exports.findByCategory = (req, res) => {
+  const category = req.params.category;
+  var condition = category
+    ? { category: { [Op.like]: `%${category}%` } }
+    : null;
+
+  Product.findAll({ where: condition })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials.",
+      });
+    });
+};
+
 exports.findAll = (req, res) => {
-  const category = req.query.category;
+  const category = req.body.category;
   var condition = category
     ? { category: { [Op.like]: `%${category}%` } }
     : null;
@@ -54,6 +73,7 @@ exports.update = (req, res) => {
       title: req.body.title,
       item_code: req.body.item_code,
       category: req.body.category,
+      qtyType: req.body.qtyType,
       desc: req.body.desc,
       rating: req.body.rating,
       rating_count: req.body.rating_count,
