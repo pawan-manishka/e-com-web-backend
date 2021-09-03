@@ -1,8 +1,14 @@
 var nodemailer = require("nodemailer");
 exports.mail = (req, res) => {
   const email = req.body.email;
+  const customer_name = req.body.customer_name
   const items = req.body.order_list;
-  
+
+  var arrayItems = "";
+  var n;
+  for (n in items) {
+    arrayItems += "<li>" + items[n] + "</li>";
+  }
 
   var transporter = nodemailer.createTransport({
     host: "smtp.gmail.com", // hostname
@@ -17,7 +23,7 @@ exports.mail = (req, res) => {
   var mailOptions = {
     from: "ravinduperera",
     to: email,
-    subject: "Hello",
+    subject: "Lanka Fresh Order Confirmation !",
     // html:
     // "<b>Client Email Template- Received this once the Booking done</b><div>The Following booking is confirmed:</div>
     // <div>Preferred Location: {{location}}</div><div>Exam Type {{exam_type}}</div>
@@ -31,9 +37,14 @@ exports.mail = (req, res) => {
           <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
         </head>
         <body>
-      
-        <b>Your Order Has been successfully Placed - Lanka Fresh </b></br>
-        <b>ITEMS ${items}</b></br>
+        <b>Hello ${customer_name}</b></br>
+        <p>Your order has been successfully placed. Please find the details of your order below.</p></br></br>
+        
+        <b>ITEMS Orders</b></br>
+        <ul>${arrayItems}</ul>
+   
+        <b>Thank you for shopping with Lanka Fresh</b>
+        
         </body>
       </html>`,
   };

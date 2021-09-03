@@ -4,7 +4,7 @@ exports.mail = (req, res) => {
   const customer_name = req.body.customer_name;
   const mobile = req.body.mobile;
   const order_list = req.body.order_list;
-  
+
 
   var transporter = nodemailer.createTransport({
     host: "smtp.gmail.com", // hostname
@@ -19,7 +19,7 @@ exports.mail = (req, res) => {
   var mailOptions = {
     from: "ravinduperera",
     to: "ravindu1997@gmail.com",
-    subject: "Hello",
+    subject: "Lanka Fresh New Order Placed !",
     // html:
     // "<b>Client Email Template- Received this once the Booking done</b><div>The Following booking is confirmed:</div>
     // <div>Preferred Location: {{location}}</div><div>Exam Type {{exam_type}}</div>
@@ -34,11 +34,12 @@ exports.mail = (req, res) => {
         </head>
         <body>
       
-        <b>New Order Being Placed </b></br>
-        <b>Customer Name ${customer_name}</b></br>
-        <b>Email ${email}</b></br>
-        <b>Mobile ${mobile}</b></br>
-        <b>Order List ${order_list}</b></br>
+        <b>New Order Placed</b></br>
+        
+        <b>Customer Name : ${customer_name}</b></br>
+        <b>Email : ${email}</b></br>
+        <b>Mobile : ${mobile}</b></br>
+        <b>Order List : ${order_list}</b></br>
        
         </body>
       </html>`,
