@@ -6,8 +6,11 @@ exports.mail = (req, res) => {
 
   var arrayItems = "";
   var n;
-  for (n in items) {
-    arrayItems += "<li>" + items[n].productName + "</li>";
+
+  for (let i = 0; i < items.length; i++) {
+    console.log("Start");
+    arrayItems += "<li>" +"Product:-"+ items[i].productName + " "+"QTY:-"+ items[i].productQTY +  " "+ "LKR:-"+items[i].productPrice +"</li>";
+    console.log(items[i]);
   }
 
   var transporter = nodemailer.createTransport({

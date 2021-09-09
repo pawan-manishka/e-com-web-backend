@@ -6,6 +6,15 @@ exports.mail = (req, res) => {
   const order_list = req.body.order_list;
 
 
+  var arrayItems = "";
+  var n;
+
+  for (let i = 0; i < items.length; i++) {
+    console.log("Start");
+    arrayItems += "<li>" +"Product:-"+ items[i].productName + " "+"QTY:-"+ items[i].productQTY +  " "+ "LKR:-"+items[i].productPrice +"</li>";
+    console.log(items[i]);
+  }
+  
   var transporter = nodemailer.createTransport({
     host: "smtp.gmail.com", // hostname
     secureConnection: true, // use SSL
@@ -39,7 +48,7 @@ exports.mail = (req, res) => {
         <b>Customer Name : ${customer_name}</b></br>
         <b>Email : ${email}</b></br>
         <b>Mobile : ${mobile}</b></br>
-        <b>Order List : ${order_list}</b></br>
+        <b>Order List : ${arrayItems}</b></br>
        
         </body>
       </html>`,
